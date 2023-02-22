@@ -71,6 +71,9 @@ dependencies {
 	modImplementation("net.glasslauncher:HowManyItems-Fabric-Unofficial:${project.howmanyitems_version}") {
 		transitive false
 	}
+	modImplementation("com.github.gt-golden:GT-Golden-Core:${project.gt_golden_core_version}") {
+		transitive false
+	}
 }
 
 processResources {
