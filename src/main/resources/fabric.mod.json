@@ -3,7 +3,7 @@
   "id": "gregtech",
   "version": "${version}",
 
-  "name": "GregTech:Golden",
+  "name": "GregTech: Golden",
   "description": "GregTech for golden versions of minecraft",
   "authors": [
     "KydZombie",
@@ -19,12 +19,12 @@
 
   "environment": "*",
   "entrypoints": {
-    "stationapi:event_bus": [
-      "com.github.gtgolden.gregtech.events.ItemRegistry"
+    "gregtech:event_bus": [
+      "com.github.gtgolden.gregtech.events.init.GregTech"
     ],
-    "stationapi:event_bus_client": [
+    "gregtech:event_bus_client": [
     ],
-    "stationapi:event_bus_server": [
+    "gregtech:event_bus_server": [
     ]
   },
   "mixins": [

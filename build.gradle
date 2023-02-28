@@ -61,6 +61,8 @@ dependencies {
 
 	modImplementation "net.modificationstation:StationAPI:${project.stapi_version}"
 
+	modImplementation("com.github.GT-Golden:GT-Golden-Core:${project.gt_golden_core_version}")
+
 	// Optional, but convenient mods for mod creators and users alike.
 	modImplementation("com.github.calmilamsy:ModMenu:${project.modmenu_version}") {
 		transitive false
@@ -69,9 +71,6 @@ dependencies {
 		transitive false
 	}
 	modImplementation("net.glasslauncher:HowManyItems-Fabric-Unofficial:${project.howmanyitems_version}") {
-		transitive false
-	}
-	modImplementation("com.github.GT-Golden:GT-Golden-Core:${project.gt_golden_core_version}") {
 		transitive false
 	}
 }
