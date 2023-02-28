@@ -1,4 +1,4 @@
-package com.github.gtgolden.gregtech.events.init;
+package com.github.gtgolden.gregtech;
 
 import com.github.gtgolden.gtgoldencore.item.MetaItem;
 import com.github.gtgolden.gtgoldencore.material.GTMaterial;
@@ -26,7 +26,7 @@ public class GregTech {
         new GTMaterial.Builder("iron")
                 .setItem("ingot", ItemBase.ironIngot)
                 .color(new Color(0xA19D94))
-                .states("dust", "unknownTest")
+                .states("dust")
                 .build();
         new GTMaterial.Builder("gold")
                 .setItem("ingot", ItemBase.goldIngot)

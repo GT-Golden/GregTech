@@ -19,12 +19,12 @@
 
   "environment": "*",
   "entrypoints": {
-    "gregtech:event_bus": [
-      "com.github.gtgolden.gregtech.events.init.GregTech"
+    "stationapi:event_bus": [
+      "com.github.gtgolden.gregtech.GregTech"
     ],
-    "gregtech:event_bus_client": [
+    "stationapi:event_bus_client": [
     ],
-    "gregtech:event_bus_server": [
+    "stationapi:event_bus_server": [
     ]
   },
   "mixins": [
