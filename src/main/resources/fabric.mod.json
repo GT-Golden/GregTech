@@ -20,7 +20,9 @@
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
-      "com.github.gtgolden.gregtech.GregTech"
+      "com.github.gtgolden.gregtech.GregTech",
+      "com.github.gtgolden.gregtech.events.ItemListener",
+      "com.github.gtgolden.gregtech.events.RecipeListener"
     ],
     "stationapi:event_bus_client": [
     ],

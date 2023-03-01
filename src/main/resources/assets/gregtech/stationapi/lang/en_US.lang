@@ -1,0 +1,16 @@
+item.NULL.name=%s NULL
+item.ingot.name=%s Ingot
+item.dust.name=%s Dust
+item.sludge.name=%s Sludge
+
+tile.generator.name=Generator
+
+tile.batteryBlock.name=Battery
+
+tile.powerCable.name=Power Cable
+
+material..name=NULL
+material.missingMaterial.name=NULL
+material.iron.name=Iron
+material.gold.name=Gold
+material.redstone.name=Redstone
