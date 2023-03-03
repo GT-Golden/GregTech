@@ -1,6 +1,6 @@
 package com.github.gtgolden.gregtech.events;
 
-import com.github.gtgolden.gregtech.materials.TestMaterials;
+import com.github.gtgolden.gregtech.materials.*;
 import com.github.gtgolden.gtgoldencore.item.MetaItem;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
@@ -15,6 +15,18 @@ public class ItemListener {
         new MetaItem(MOD_ID.id("dust"));
 
         // material registry
-        TestMaterials.init();
+        ElementMaterials.register();
+
+        FirstDegreeMaterials.register();
+
+        OrganicChemistryMaterials.register();
+
+        UnknownCompositionMaterials.register();
+
+        SecondDegreeMaterials.register();
+
+        HigherDegreeMaterials.register();
+
+        MaterialFlagAddition.register();
     }
 }
