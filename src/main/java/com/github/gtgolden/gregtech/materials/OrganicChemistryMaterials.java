@@ -1,530 +1,537 @@
 package com.github.gtgolden.gregtech.materials;
 
-import gregtech.api.fluids.fluidType.FluidTypes;
-import gregtech.api.unification.material.Material;
+import com.github.gtgolden.gtgoldencore.material.GTMaterial;
+import com.github.gtgolden.gtgoldencore.material.MaterialStack;
+import com.github.gtgolden.gtgoldencore.material.Materials;
 
-import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.*;
-import static gregtech.api.unification.material.info.MaterialIconSet.*;
+import static com.github.gtgolden.gtgoldencore.material.chemistry.Elements.*;
 
 public class OrganicChemistryMaterials {
     /**
      * ID RANGE: 1000-1068 (incl.)
+     *
+     * (no)
      */
     public static void register() {
-        SiliconeRubber = new Material.Builder(1000, "silicone_rubber")
-                .polymer()
+        new GTMaterial.Builder("silicone_rubber")
+                // .polymer()
                 .color(0xDCDCDC)
-                .flags(GENERATE_GEAR, GENERATE_RING, GENERATE_FOIL)
-                .components(Carbon, 2, Hydrogen, 6, Oxygen, 1, Silicon, 1)
-                .fluidTemp(900)
+                // .flags(GENERATE_GEAR, GENERATE_RING, GENERATE_FOIL)
+                .components("C2H6OSi")
+                // .fluidTemp(900)
                 .build();
 
-        Nitrobenzene = new Material.Builder(1001, "nitrobenzene")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("nitrobenzene")
+                // .fluid(FluidTypes.GAS)
                 .color(0x704936)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 6, Hydrogen, 5, Nitrogen, 1, Oxygen, 2)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C6H5NO2")
                 .build();
 
-        RawRubber = new Material.Builder(1002, "raw_rubber")
-                .polymer()
+        new GTMaterial.Builder("raw_rubber")
+                // .polymer()
                 .color(0xCCC789)
-                .components(Carbon, 5, Hydrogen, 8)
+                .components("C5H8")
                 .build();
 
-        RawStyreneButadieneRubber = new Material.Builder(1003, "raw_styrene_butadiene_rubber")
-                .dust()
-                .color(0x54403D).iconSet(SHINY)
-                .flags(DISABLE_DECOMPOSITION, FLAMMABLE)
-                .components(Carbon, 20, Hydrogen, 26)
-                .build()
-                .setFormula("(C4H6)3C8H8", true);
+        new GTMaterial.Builder("raw_styrene_butadiene_rubber")
+                .states("dust") // ()
+                .color(0x54403D) // .iconSet(SHINY)
+                // .flags(DISABLE_DECOMPOSITION, FLAMMABLE)
+                .components("C20H26")
+                .setFormula("(C4H6)3C8H8")
+                .build();
 
-        StyreneButadieneRubber = new Material.Builder(1004, "styrene_butadiene_rubber")
-                .polymer()
-                .color(0x211A18).iconSet(SHINY)
-                .flags(GENERATE_FOIL, GENERATE_RING)
-                .components(Carbon, 20, Hydrogen, 26)
-                .fluidTemp(1000)
-                .build()
-                .setFormula("(C4H6)3C8H8", true);
+        new GTMaterial.Builder("styrene_butadiene_rubber")
+                // .polymer()
+                .color(0x211A18) // .iconSet(SHINY)
+                // .flags(GENERATE_FOIL, GENERATE_RING)
+                .components("C20H26")
+                .setFormula("(C4H6)3C8H8")
+                // .fluidTemp(1000)
+                .build();
 
-        PolyvinylAcetate = new Material.Builder(1005, "polyvinyl_acetate")
-                .fluid()
+        new GTMaterial.Builder("polyvinyl_acetate")
+                // .fluid()
                 .color(0xFF9955)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 4, Hydrogen, 6, Oxygen, 2)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C4H6O2")
                 .build();
 
-        ReinforcedEpoxyResin = new Material.Builder(1006, "reinforced_epoxy_resin")
-                .polymer()
+        new GTMaterial.Builder("reinforced_epoxy_resin")
+                // .polymer()
                 .color(0xA07A10)
-                .flags(STD_METAL)
-                .components(Carbon, 6, Hydrogen, 4, Oxygen, 1)
-                .fluidTemp(600)
+                // .flags(STD_METAL)
+                .components("C6H4O")
+                // .fluidTemp(600)
                 .build();
 
-        PolyvinylChloride = new Material.Builder(1007, "polyvinyl_chloride")
-                .polymer()
+        new GTMaterial.Builder("polyvinyl_chloride")
+                // .polymer()
                 .color(0xD7E6E6)
-                .flags(EXT_METAL, GENERATE_FOIL)
-                .components(Carbon, 2, Hydrogen, 3, Chlorine, 1)
-                .itemPipeProperties(512, 4)
-                .fluidTemp(373)
+                // .flags(EXT_METAL, GENERATE_FOIL)
+                .components("C2H3Cl")
+                // .itemPipeProperties(512, 4)
+                // .fluidTemp(373)
                 .build();
 
-        PolyphenyleneSulfide = new Material.Builder(1008, "polyphenylene_sulfide")
-                .polymer()
+        new GTMaterial.Builder("polyphenylene_sulfide")
+                // .polymer()
                 .color(0xAA8800)
-                .flags(EXT_METAL, GENERATE_FOIL)
-                .components(Carbon, 6, Hydrogen, 4, Sulfur, 1)
-                .fluidTemp(500)
+                // .flags(EXT_METAL, GENERATE_FOIL)
+                .components("C6H4S")
+                // .fluidTemp(500)
                 .build();
 
-        GlycerylTrinitrate = new Material.Builder(1009, "glyceryl_trinitrate")
-                .fluid()
-                .flags(FLAMMABLE, EXPLOSIVE)
-                .components(Carbon, 3, Hydrogen, 5, Nitrogen, 3, Oxygen, 9)
+        new GTMaterial.Builder("glyceryl_trinitrate")
+                // .fluid()
+                // .flags(FLAMMABLE, EXPLOSIVE)
+                .components("C3H5N3O9")
                 .build();
 
-        Polybenzimidazole = new Material.Builder(1010, "polybenzimidazole")
-                .polymer()
+        new GTMaterial.Builder("polybenzimidazole")
+                // .polymer()
                 .color(0x2D2D2D)
-                .flags(EXCLUDE_BLOCK_CRAFTING_RECIPES, GENERATE_FOIL)
-                .components(Carbon, 20, Hydrogen, 12, Nitrogen, 4)
-                .fluidPipeProperties(1000, 350, true)
-                .fluidTemp(1450)
+                // .flags(EXCLUDE_BLOCK_CRAFTING_RECIPES, GENERATE_FOIL)
+                .components("C20H12N4")
+                // .fluidPipeProperties(1000, 350, true)
+                // .fluidTemp(1450)
                 .build();
 
-        Polydimethylsiloxane = new Material.Builder(1011, "polydimethylsiloxane")
-                .dust()
+        new GTMaterial.Builder("polydimethylsiloxane")
+                .states("dust") // ()
                 .color(0xF5F5F5)
-                .flags(DISABLE_DECOMPOSITION, FLAMMABLE)
-                .components(Carbon, 2, Hydrogen, 6, Oxygen, 1, Silicon, 1)
+                // .flags(DISABLE_DECOMPOSITION, FLAMMABLE)
+                .components("C2H6OSi")
                 .build();
 
-        Polyethylene = new Material.Builder(1012, "plastic") //todo add polyethylene oredicts
-                .polymer(1)
+        new GTMaterial.Builder("plastic") //todo add polyethylene oredicts
+                // .polymer(1)
                 .color(0xC8C8C8)
-                .flags(GENERATE_FOIL)
-                .components(Carbon, 2, Hydrogen, 4)
-                .fluidPipeProperties(370, 50, true)
-                .fluidTemp(408)
+                // .flags(GENERATE_FOIL)
+                .components("C2H4")
+                // .fluidPipeProperties(370, 50, true)
+                // .fluidTemp(408)
                 .build();
 
-        Epoxy = new Material.Builder(1013, "epoxy")
-                .polymer(1)
+        new GTMaterial.Builder("epoxy")
+                // .polymer(1)
                 .color(0xC88C14)
-                .flags(STD_METAL)
-                .components(Carbon, 21, Hydrogen, 25, Chlorine, 1, Oxygen, 5)
-                .fluidTemp(400)
+                // .flags(STD_METAL)
+                .components("C21H25ClO5")
+                // .fluidTemp(400)
                 .build();
 
         // Free ID 1014
 
-        Polycaprolactam = new Material.Builder(1015, "polycaprolactam")
-                .polymer(1)
+        new GTMaterial.Builder("polycaprolactam")
+                // .polymer(1)
                 .color(0x323232)
-                .flags(STD_METAL, GENERATE_FOIL)
-                .components(Carbon, 6, Hydrogen, 11, Nitrogen, 1, Oxygen, 1)
-                .fluidTemp(493)
+                // .flags(STD_METAL, GENERATE_FOIL)
+                .components("C6H11NO")
+                // .fluidTemp(493)
                 .build();
 
-        Polytetrafluoroethylene = new Material.Builder(1016, "polytetrafluoroethylene")
-                .polymer(1)
+        new GTMaterial.Builder("polytetrafluoroethylene")
+                // .polymer(1)
                 .color(0x646464)
-                .flags(STD_METAL, GENERATE_FRAME, GENERATE_FOIL)
-                .components(Carbon, 2, Fluorine, 4)
-                .fluidPipeProperties(600, 100, true, true, false, false)
-                .fluidTemp(600)
+                // .flags(STD_METAL, GENERATE_FRAME, GENERATE_FOIL)
+                .components("C2F4")
+                // .fluidPipeProperties(600, 100, true, true, false, false)
+                // .fluidTemp(600)
                 .build();
 
-        Sugar = new Material.Builder(1017, "sugar")
-                .gem(1)
-                .color(0xFAFAFA).iconSet(FINE)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 6, Hydrogen, 12, Oxygen, 6)
+        new GTMaterial.Builder("sugar")
+                .states("gem") // (1)
+                .color(0xFAFAFA) // .iconSet(FINE)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C6H12O6")
                 .build();
 
-        Methane = new Material.Builder(1018, "methane")
-                .fluid(FluidTypes.GAS)
-                .color(0xFF0078).iconSet(GAS)
-                .components(Carbon, 1, Hydrogen, 4)
+        new GTMaterial.Builder("methane")
+                // .fluid(FluidTypes.GAS)
+                .color(0xFF0078) // .iconSet(GAS)
+                .components("CH4")
                 .build();
 
-        Epichlorohydrin = new Material.Builder(1019, "epichlorohydrin")
-                .fluid()
+        new GTMaterial.Builder("epichlorohydrin")
+                // .fluid()
                 .color(0x712400)
-                .components(Carbon, 3, Hydrogen, 5, Chlorine, 1, Oxygen, 1)
+                .components("C3H5ClO")
                 .build();
 
-        Monochloramine = new Material.Builder(1020, "monochloramine")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("monochloramine")
+                // .fluid(FluidTypes.GAS)
                 .color(0x3F9F80)
-                .components(Nitrogen, 1, Hydrogen, 2, Chlorine, 1)
+                .components("NH2Cl")
                 .build();
 
-        Chloroform = new Material.Builder(1021, "chloroform")
-                .fluid()
+        new GTMaterial.Builder("chloroform")
+                // .fluid()
                 .color(0x892CA0)
-                .components(Carbon, 1, Hydrogen, 1, Chlorine, 3)
+                .components("CHCl3")
                 .build();
 
-        Cumene = new Material.Builder(1022, "cumene")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("cumene")
+                // .fluid(FluidTypes.GAS)
                 .color(0x552200)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 9, Hydrogen, 12)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C9H12")
                 .build();
 
-        Tetrafluoroethylene = new Material.Builder(1023, "tetrafluoroethylene")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("tetrafluoroethylene")
+                // .fluid(FluidTypes.GAS)
                 .color(0x7D7D7D)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 2, Fluorine, 4)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C2F4")
                 .build();
 
-        Chloromethane = new Material.Builder(1024, "chloromethane")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("chloromethane")
+                // .fluid(FluidTypes.GAS)
                 .color(0xC82CA0)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 1, Hydrogen, 3, Chlorine, 1)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("CH3Cl")
                 .build();
 
-        AllylChloride = new Material.Builder(1025, "allyl_chloride")
-                .fluid()
+        new GTMaterial.Builder("allyl_chloride")
+                // .fluid()
                 .color(0x87DEAA)
-                .components(Carbon, 2, Methane, 1, HydrochloricAcid, 1)
-                .build()
-                .setFormula("C3H5Cl", true);
+                .setComponents(
+                        C.x(2),
+                        new MaterialStack("Methane", 1),
+                        new MaterialStack("HydrochloricAcid", 1))
+                .setFormula("C3H5Cl")
+                .build();
 
-        Isoprene = new Material.Builder(1026, "isoprene")
-                .fluid()
+        new GTMaterial.Builder("isoprene")
+                // .fluid()
                 .color(0x141414)
-                .components(Carbon, 5, Hydrogen, 8)
+                .components("C5H8")
                 .build();
 
-        Propane = new Material.Builder(1027, "propane")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("propane")
+                // .fluid(FluidTypes.GAS)
                 .color(0xFAE250)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 3, Hydrogen, 8)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C3H8")
                 .build();
 
-        Propene = new Material.Builder(1028, "propene")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("propene")
+                // .fluid(FluidTypes.GAS)
                 .color(0xFFDD55)
-                .components(Carbon, 3, Hydrogen, 6)
+                .components("C3H6")
                 .build();
 
-        Ethane = new Material.Builder(1029, "ethane")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("ethane")
+                // .fluid(FluidTypes.GAS)
                 .color(0xC8C8FF)
-                .components(Carbon, 2, Hydrogen, 6)
+                .components("C2H6")
                 .build();
 
-        Butene = new Material.Builder(1030, "butene")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("butene")
+                // .fluid(FluidTypes.GAS)
                 .color(0xCF5005)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 4, Hydrogen, 8)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C4H8")
                 .build();
 
-        Butane = new Material.Builder(1031, "butane")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("butane")
+                // .fluid(FluidTypes.GAS)
                 .color(0xB6371E)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 4, Hydrogen, 10)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C4H10")
                 .build();
 
-        DissolvedCalciumAcetate = new Material.Builder(1032, "dissolved_calcium_acetate")
-                .fluid()
+        new GTMaterial.Builder("dissolved_calcium_acetate")
+                // .fluid()
                 .color(0xDCC8B4)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Calcium, 1, Carbon, 4, Oxygen, 4, Hydrogen, 6, Water, 1)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("CaC4OH8")
+                .setFormula("Ca(CH3COO)2(H2O)")
                 .build();
 
-        VinylAcetate = new Material.Builder(1033, "vinyl_acetate")
-                .fluid()
+        new GTMaterial.Builder("vinyl_acetate")
+                // .fluid()
                 .color(0xE1B380)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 4, Hydrogen, 6, Oxygen, 2)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C4H6O2")
                 .build();
 
-        MethylAcetate = new Material.Builder(1034, "methyl_acetate")
-                .fluid()
+        new GTMaterial.Builder("methyl_acetate")
+                // .fluid()
                 .color(0xEEC6AF)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 3, Hydrogen, 6, Oxygen, 2)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C3H6O2")
                 .build();
 
-        Ethenone = new Material.Builder(1035, "ethenone")
-                .fluid()
+        new GTMaterial.Builder("ethenone")
+                // .fluid()
                 .color(0x141446)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 2, Hydrogen, 2, Oxygen, 1)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C2H2O")
                 .build();
 
-        Tetranitromethane = new Material.Builder(1036, "tetranitromethane")
-                .fluid()
+        new GTMaterial.Builder("tetranitromethane")
+                // .fluid()
                 .color(0x0F2828)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 1, Nitrogen, 4, Oxygen, 8)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("CN4O8")
                 .build();
 
-        Dimethylamine = new Material.Builder(1037, "dimethylamine")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("dimethylamine")
+                // .fluid(FluidTypes.GAS)
                 .color(0x554469)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 2, Hydrogen, 7, Nitrogen, 1)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C2H7N")
                 .build();
 
-        Dimethylhydrazine = new Material.Builder(1038, "dimethylhydrazine")
-                .fluid()
+        new GTMaterial.Builder("dimethylhydrazine")
+                // .fluid()
                 .color(0x000055)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 2, Hydrogen, 8, Nitrogen, 2)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C2H8N2")
                 .build();
 
-        DinitrogenTetroxide = new Material.Builder(1039, "dinitrogen_tetroxide")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("dinitrogen_tetroxide")
+                // .fluid(FluidTypes.GAS)
                 .color(0x004184)
-                .components(Nitrogen, 2, Oxygen, 4)
+                .components("N2O4")
                 .build();
 
-        Dimethyldichlorosilane = new Material.Builder(1040, "dimethyldichlorosilane")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("dimethyldichlorosilane")
+                // .fluid(FluidTypes.GAS)
                 .color(0x441650)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 2, Hydrogen, 6, Chlorine, 2, Silicon, 1)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C2H6Cl2Si")
                 .build();
 
-        Styrene = new Material.Builder(1041, "styrene")
-                .fluid()
+        new GTMaterial.Builder("styrene")
+                // .fluid()
                 .color(0xD2C8BE)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 8, Hydrogen, 8)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C8H8")
                 .build();
 
-        Butadiene = new Material.Builder(1042, "butadiene")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("butadiene")
+                // .fluid(FluidTypes.GAS)
                 .color(0xB55A10)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 4, Hydrogen, 6)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C4H6")
                 .build();
 
-        Dichlorobenzene = new Material.Builder(1043, "dichlorobenzene")
-                .fluid()
+        new GTMaterial.Builder("dichlorobenzene")
+                // .fluid()
                 .color(0x004455)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 6, Hydrogen, 4, Chlorine, 2)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C6H4Cl2")
                 .build();
 
-        AceticAcid = new Material.Builder(1044, "acetic_acid")
-                .fluid(FluidTypes.ACID)
+        new GTMaterial.Builder("acetic_acid")
+                // .fluid(FluidTypes.ACID)
                 .color(0xC8B4A0)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 2, Hydrogen, 4, Oxygen, 2)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C2H4O2")
                 .build();
 
-        Phenol = new Material.Builder(1045, "phenol")
-                .fluid()
+        new GTMaterial.Builder("phenol")
+                // .fluid()
                 .color(0x784421)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 6, Hydrogen, 6, Oxygen, 1)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C6H6O")
                 .build();
 
-        BisphenolA = new Material.Builder(1046, "bisphenol_a")
-                .fluid()
+        new GTMaterial.Builder("bisphenol_a")
+                // .fluid()
                 .color(0xD4AA00)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 15, Hydrogen, 16, Oxygen, 2)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C15H16O2")
                 .build();
 
-        VinylChloride = new Material.Builder(1047, "vinyl_chloride")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("vinyl_chloride")
+                // .fluid(FluidTypes.GAS)
                 .color(0xE1F0F0)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 2, Hydrogen, 3, Chlorine, 1)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C2H3Cl")
                 .build();
 
-        Ethylene = new Material.Builder(1048, "ethylene")
-                .fluid(FluidTypes.GAS)
+        new GTMaterial.Builder("ethylene")
+                // .fluid(FluidTypes.GAS)
                 .color(0xE1E1E1)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 2, Hydrogen, 4)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C2H4")
                 .build();
 
-        Benzene = new Material.Builder(1049, "benzene")
-                .fluid()
+        new GTMaterial.Builder("benzene")
+                // .fluid()
                 .color(0x1A1A1A)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 6, Hydrogen, 6)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C6H6")
                 .build();
 
-        Acetone = new Material.Builder(1050, "acetone")
-                .fluid()
+        new GTMaterial.Builder("acetone")
+                // .fluid()
                 .color(0xAFAFAF)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 3, Hydrogen, 6, Oxygen, 1)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C3H6O")
                 .build();
 
-        Glycerol = new Material.Builder(1051, "glycerol")
-                .fluid()
+        new GTMaterial.Builder("glycerol")
+                // .fluid()
                 .color(0x87DE87)
-                .components(Carbon, 3, Hydrogen, 8, Oxygen, 3)
+                .components("C3H8O3")
                 .build();
 
-        Methanol = new Material.Builder(1052, "methanol")
-                .fluid()
+        new GTMaterial.Builder("methanol")
+                // .fluid()
                 .color(0xAA8800)
-                .components(Carbon, 1, Hydrogen, 4, Oxygen, 1)
+                .components("CH4O")
                 .build();
 
         // FREE ID 1053
 
-        Ethanol = new Material.Builder(1054, "ethanol")
-                .fluid()
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 2, Hydrogen, 6, Oxygen, 1)
+        new GTMaterial.Builder("ethanol")
+                // .fluid()
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C2H6O")
                 .build();
 
-        Toluene = new Material.Builder(1055, "toluene")
-                .fluid()
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 7, Hydrogen, 8)
+        new GTMaterial.Builder("toluene")
+                // .fluid()
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C7H8")
                 .build();
 
-        DiphenylIsophtalate = new Material.Builder(1056, "diphenyl_isophthalate")
-                .fluid()
+        new GTMaterial.Builder("diphenyl_isophthalate")
+                // .fluid()
                 .color(0x246E57)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 20, Hydrogen, 14, Oxygen, 4)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C20H14O4")
                 .build();
 
-        PhthalicAcid = new Material.Builder(1057, "phthalic_acid")
-                .fluid(FluidTypes.ACID)
+        new GTMaterial.Builder("phthalic_acid")
+                // .fluid(FluidTypes.ACID)
                 .color(0xD1D1D1)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 8, Hydrogen, 6, Oxygen, 4)
-                .build()
-                .setFormula("C6H4(CO2H)2", true);
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C8H6O4")
+                .setFormula("C6H4(CO2H)2")
+                .build();
 
-        Dimethylbenzene = new Material.Builder(1058, "dimethylbenzene")
-                .fluid()
+        new GTMaterial.Builder("dimethylbenzene")
+                // .fluid()
                 .color(0x669C40)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 8, Hydrogen, 10)
-                .build()
-                .setFormula("C6H4(CH3)2", true);
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C8H10")
+                .setFormula("C6H4(CH3)2")
+                .build();
 
-        Diaminobenzidine = new Material.Builder(1059, "diaminobenzidine")
-                .fluid()
+        new GTMaterial.Builder("diaminobenzidine")
+                // .fluid()
                 .color(0x337D59)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 12, Hydrogen, 14, Nitrogen, 4)
-                .build()
-                .setFormula("(C6H3(NH2)2)2", true);
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C12H14N4")
+                .setFormula("(C6H3(NH2)2)2")
+                .build();
 
-        Dichlorobenzidine = new Material.Builder(1060, "dichlorobenzidine")
-                .fluid()
+        new GTMaterial.Builder("dichlorobenzidine")
+                // .fluid()
                 .color(0xA1DEA6)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 12, Hydrogen, 10, Chlorine, 2, Nitrogen, 2)
-                .build()
-                .setFormula("(C6H3Cl(NH2))2", true);
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C12H10Cl2N2")
+                .setFormula("(C6H3Cl(NH2))2")
+                .build();
 
-        Nitrochlorobenzene = new Material.Builder(1061, "nitrochlorobenzene")
-                .fluid()
+        new GTMaterial.Builder("nitrochlorobenzene")
+                // .fluid()
                 .color(0x8FB51A)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 6, Hydrogen, 4, Chlorine, 1, Nitrogen, 1, Oxygen, 2)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C6H4ClNO2")
                 .build();
 
-        Chlorobenzene = new Material.Builder(1062, "chlorobenzene")
-                .fluid()
+        new GTMaterial.Builder("chlorobenzene")
+                // .fluid()
                 .color(0x326A3E)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 6, Hydrogen, 5, Chlorine, 1)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C6H5Cl")
                 .build();
 
-        Octane = new Material.Builder(1063, "octane")
-                .fluid()
-                .flags(DISABLE_DECOMPOSITION)
+        new GTMaterial.Builder("octane")
+                // .fluid()
+                // .flags(DISABLE_DECOMPOSITION)
                 .color(0x8A0A09)
-                .components(Carbon, 8, Hydrogen, 18)
+                .components("C8H18")
                 .build();
 
-        EthylTertButylEther = new Material.Builder(1064, "ethyl_tertbutyl_ether")
-                .fluid()
-                .flags(DISABLE_DECOMPOSITION)
+        new GTMaterial.Builder("ethyl_tertbutyl_ether")
+                // .fluid()
+                // .flags(DISABLE_DECOMPOSITION)
                 .color(0xB15C06)
-                .components(Carbon, 6, Hydrogen, 14, Oxygen, 1)
+                .components("C6H14O")
                 .build();
 
-        Ethylbenzene = new Material.Builder(1066, "ethylbenzene")
-                .fluid()
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 8, Hydrogen, 10)
+        new GTMaterial.Builder("ethylbenzene")
+                // .fluid()
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C8H10")
                 .build();
 
-        Naphthalene = new Material.Builder(1067, "naphthalene")
-                .fluid()
-                .flags(DISABLE_DECOMPOSITION)
+        new GTMaterial.Builder("naphthalene")
+                // .fluid()
+                // .flags(DISABLE_DECOMPOSITION)
                 .color(0xF4F4D7)
-                .components(Carbon, 10, Hydrogen, 8)
+                .components("C10H8")
                 .build();
 
-        Rubber = new Material.Builder(1068, "rubber")
-                .polymer(0)
-                .color(0x000000).iconSet(SHINY)
-                .flags(GENERATE_GEAR, GENERATE_RING, GENERATE_FOIL, GENERATE_BOLT_SCREW)
-                .components(Carbon, 5, Hydrogen, 8)
-                .fluidTemp(400)
+        new GTMaterial.Builder("rubber")
+                // .polymer(0) polymer is multiple meta items, todo lookup what metaitems are included into polymer
+                .color(0x000000) // .iconSet(SHINY)
+                // .flags(GENERATE_GEAR, GENERATE_RING, GENERATE_FOIL, GENERATE_BOLT_SCREW)
+                .components("C5H8")
+                // .fluidTemp(400)
                 .build();
 
-        Cyclohexane = new Material.Builder(1069, "cyclohexane")
-                .fluid()
+        new GTMaterial.Builder("cyclohexane")
+                // .fluid()
                 .color(0xF2F2F2E7)
-                .components(Carbon, 6, Hydrogen, 12)
+                .components("C6H12")
                 .build();
 
-        NitrosylChloride = new Material.Builder(1070, "nitrosyl_chloride")
-                .fluid(FluidTypes.GAS)
-                .flags(FLAMMABLE)
+        new GTMaterial.Builder("nitrosyl_chloride")
+                // .fluid(FluidTypes.GAS)
+                // .flags(FLAMMABLE)
                 .color(0xF3F100)
-                .components(Nitrogen, 1, Oxygen, 1, Chlorine, 1)
+                .components("NOCl")
                 .build();
 
-        CyclohexanoneOxime = new Material.Builder(1071, "cyclohexanone_oxime")
-                .dust()
-                .flags(DISABLE_DECOMPOSITION, FLAMMABLE)
-                .color(0xEBEBF0).iconSet(ROUGH)
-                .components(Carbon, 6, Hydrogen, 11, Nitrogen, 1, Oxygen, 1)
-                .build()
-                .setFormula("C6H11NO", true);
+        new GTMaterial.Builder("cyclohexanone_oxime")
+                .states("dust") // ()
+                // .flags(DISABLE_DECOMPOSITION, FLAMMABLE)
+                .color(0xEBEBF0) // .iconSet(ROUGH)
+                .components("C6H11NO")
+                .build();
 
-        Caprolactam = new Material.Builder(1072, "caprolactam")
-                .dust()
-                .flags(DISABLE_DECOMPOSITION, FLAMMABLE)
+        new GTMaterial.Builder("caprolactam")
+                .states("dust") // ()
+                // .flags(DISABLE_DECOMPOSITION, FLAMMABLE)
                 .color(0x676768)
-                .components(Carbon, 6, Hydrogen, 11, Nitrogen, 1, Oxygen, 1)
-                .build()
-                .setFormula("(CH2)5C(O)NH", true);
-
-        Butyraldehyde = new Material.Builder(1073, "butyraldehyde")
-                .fluid()
-                .color(0x554A3F)
-                .flags(DISABLE_DECOMPOSITION)
-                .components(Carbon, 4, Hydrogen, 8, Oxygen, 1)
+                .components("C6H11NO")
+                .setFormula("(CH2)5C(O)NH")
                 .build();
 
-        PolyvinylButyral = new Material.Builder(1074, "polyvinyl_butyral")
-                .ingot().fluid()
+        new GTMaterial.Builder("butyraldehyde")
+                // .fluid()
+                .color(0x554A3F)
+                // .flags(DISABLE_DECOMPOSITION)
+                .components("C4H8O")
+                .build();
+
+        new GTMaterial.Builder("polyvinyl_butyral")
+                .states("ingot", "fluid") // ()()
                 .color(0x347D41)
-                .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION, NO_SMASHING)
-                .components(Butyraldehyde, 1, PolyvinylAcetate, 1)
+                // .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION, NO_SMASHING)
+                .setComponents(
+                        new MaterialStack("butyraldehyde", 1),
+                        new MaterialStack("polyvinyl_acetate", 1))
+                .setFormula("(C4H8O)(C4H6O2)")
                 .build();
     }
 }

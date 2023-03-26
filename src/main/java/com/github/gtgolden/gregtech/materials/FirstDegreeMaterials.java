@@ -2,8 +2,7 @@ package com.github.gtgolden.gregtech.materials;
 
 
 import com.github.gtgolden.gtgoldencore.material.GTMaterial;
-import com.github.gtgolden.gtgoldencore.material.Materials;
-import com.github.gtgolden.gtgoldencore.material.chemistry.Elements;
+import net.fabricmc.loader.impl.FormattedException;
 
 import static com.github.gtgolden.gtgoldencore.material.chemistry.Elements.*;
 

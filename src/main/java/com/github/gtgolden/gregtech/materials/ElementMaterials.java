@@ -269,7 +269,7 @@ public class ElementMaterials {
 
         new GTMaterial.Builder("gold")
                 .states("ingot") // ().fluid().ore()
-                .color(0xFFE650) // .iconSet(SHINY)
+                .color((0xFFE650)) // .iconSet(SHINY)
                 // .flags(EXT2_METAL, GENERATE_RING, MORTAR_GRINDABLE, EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE, GENERATE_FOIL)
                 .element(Au)
                 // .cableProperties(GTValues.V[3], 3, 2)
